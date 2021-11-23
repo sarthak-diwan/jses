@@ -1,0 +1,33 @@
+.cont{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sidebar-list{
+    list-style: none;
+}
+.sidebar-list li{
+    /* padding: 1%; */
+    width: 200px;
+    color: #dddddd;
+    font-size: larger;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+.sidebar-list li:hover{
+    /* padding: 1%; */
+    border-left: 3px solid #dddddd;
+    background-color: #3f3f3f;
+    cursor: pointer;
+}
+
+.selected {
+    border-left: 3px solid #dddddd;
+    background-color: #3f3f3f;
+    cursor: pointer;
+}

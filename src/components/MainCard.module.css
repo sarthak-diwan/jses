@@ -1,0 +1,15 @@
+.main-card{
+    padding: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    gap: 1rem;
+    align-items: flex-start;
+    background-color: rgb(53, 53, 53);
+}
+@media screen and (max-width: 768px) {
+    .main-card {
+      width: 80%;
+    }
+  }
