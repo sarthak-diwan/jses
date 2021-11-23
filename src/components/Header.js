@@ -7,6 +7,7 @@ const Header = () => {
                 <h1>
                     JSES
                 </h1>
+                <p>JUST SOME EVERYDAY STUFF</p>
             </header>
         </Fragment>
     );

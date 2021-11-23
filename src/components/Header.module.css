@@ -2,3 +2,9 @@
     text-align: center;
     color: aliceblue;
 }
+.header p{
+    margin-top:0px;
+}
+.header h1{
+    margin-bottom: 0px;
+}
