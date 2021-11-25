@@ -5,8 +5,10 @@
     flex-direction: column;
     width: 60%;
     gap: 1rem;
-    align-items: flex-start;
     background-color: rgb(53, 53, 53);
+    justify-content: space-evenly;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
 }
 @media screen and (max-width: 768px) {
     .main-card {

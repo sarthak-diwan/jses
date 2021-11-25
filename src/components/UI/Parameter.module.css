@@ -1,0 +1,10 @@
+label {
+    font-size: large;
+    color: azure;
+}
+input {
+    margin-left: 2%;
+    width: 50%;
+    height: 85%;
+    font-size: large;
+}

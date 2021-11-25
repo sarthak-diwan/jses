@@ -1,15 +1,17 @@
 .cont{
-    width: 20%;
+    width: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .sidebar-list{
     list-style: none;
+    padding-left: 0%;
 }
 .sidebar-list li{
     /* padding: 1%; */
-    width: 200px;
+    width: 100%;
+    min-width: 9vw;
     color: #dddddd;
     font-size: larger;
     text-align: center;
@@ -17,7 +19,11 @@
     padding-bottom: 2%;
     margin-top: 2%;
     margin-bottom: 2%;
-
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border-left: 3px solid #101010;
 }
 .sidebar-list li:hover{
     /* padding: 1%; */

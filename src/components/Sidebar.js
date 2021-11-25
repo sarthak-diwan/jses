@@ -4,6 +4,7 @@ import classes from './Sidebar.module.css';
 const Sidebar = (props) => {
     const liClickHandler = (event) => {
         props.setCurrentHash(event.target.innerText);
+        props.setItemType("HASH");
         // console.log(event);
         document.getElementById("userInput").value="";
         

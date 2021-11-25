@@ -8,9 +8,6 @@ const UserInput = (props) => {
         <Fragment>
             <textarea className={classes.ta} autoFocus onChange={props.inputChangeHandler} id="userInput">
             </textarea>
-            <Button>
-                SUBMIT
-            </Button>
         </Fragment>
     );
 }
