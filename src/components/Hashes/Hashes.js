@@ -26,7 +26,7 @@ const allHashes = {
         return Hex.stringify(Utf8.parse(input)).toString();
     },
     "HEX-DEC":(input)=>{
-        
+        input = input.replaceAll(" ","");
         return Latin1.stringify(Hex.parse(input)).toString();
     },
     "URL":(input)=>{
