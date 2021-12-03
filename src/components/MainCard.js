@@ -11,6 +11,7 @@ import ParameterSelect from './UI/ParameterSelect';
 import { AES } from 'crypto-js';
 import Base64 from 'crypto-js/enc-base64';
 const CryptoJS = require("crypto-js");
+var rsa = require('node-rsa');
 
 const AESParams = () => {
     return(
@@ -27,6 +28,8 @@ const encHandler = (currentHash) => {
 
 const MainCard = (props) => {
     const [outputStr, setOutputStr] = useState('');
+    const [publick, setpublic] = useState('');
+    const [privatek, setprivate] = useState('');
     const inputChangeHandler = (event) => {
         // console.log(event);
         let result = allHashes[props.currentHash](event.target.value);
@@ -58,7 +61,29 @@ const MainCard = (props) => {
             setOutputStr(decrypted.toString(CryptoJS.enc.Base64));
         }
     }
-
+    const rsaSubmitHandler = (event) => {
+        event.preventDefault();
+        if(props.currentHash === "RSA"){
+            const inputData = event.target[0].value;
+            const inputKey = parseInt(event.target[1].value);
+            var key = new rsa({b:inputKey}).generateKeyPair()
+            var publicKey = key.exportKey("public");
+            var privateKey = key.exportKey("private");
+            var public_key = new rsa(publicKey)
+            var encrypted = public_key.encrypt(inputData,'base64')
+            setOutputStr(encrypted)
+            setpublic(publicKey)
+            setprivate(privateKey)
+        } else if (props.currentHash === "RSA-DEC"){
+            const encrypted = event.target[0].value;
+            const privatekey = event.target[1].value;
+            var private_Key = new rsa(privatekey)
+            var decrypt = private_Key.decrypt(encrypted,'utf8')
+            setOutputStr(decrypt)
+            setpublic('')
+            setprivate('')
+        }
+    }
     if(props.itemType === "ENC"){
         return(
             <form onSubmit={encSubmitHandler} className={classes['main-card']}>
@@ -76,6 +101,40 @@ const MainCard = (props) => {
                 SUBMIT
                 </Button>
                 <Output value={outputStr}>
+                </Output>
+            </form>
+        );
+    }
+    if(props.itemType === "RSA"){
+        return(
+            <form onSubmit={rsaSubmitHandler} className={classes['main-card']}>
+                <UserInput placeholder="Message to be Encrypted">
+                </UserInput>
+                <ParameterSelect value="KEY SIZE" values={[512,1024,2048,3072,4096]}>
+                </ParameterSelect>
+                <Button type="submit">
+                SUBMIT
+                </Button>
+                <Output value={outputStr} plaveholder="Encrypted Data">
+                </Output>
+                <Output value={publick} plaveholder="Public Key">
+                </Output>
+                <Output value={privatek} plaveholder="Private Key">
+                </Output>
+            </form>
+        );
+    }
+    if(props.itemType === "RSA-DEC"){
+        return(
+            <form onSubmit={rsaSubmitHandler} className={classes['main-card']}>
+                <UserInput placeholder="Encrypted message">
+                </UserInput>
+                <UserInput placeholder="Private key">
+                </UserInput>
+                <Button type="submit">
+                SUBMIT
+                </Button>
+                <Output value={outputStr} plaveholder="Original Message">
                 </Output>
             </form>
         );
