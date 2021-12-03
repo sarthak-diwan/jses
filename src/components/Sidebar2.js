@@ -5,12 +5,12 @@ const Sidebar2 = (props) => {
     const liClickHandler = (event) => {
         props.setCurrentHash(event.target.innerText);
         props.setItemType("ENC");
-        if(event.target.innerText === "RSA"){
-            props.setItemType("RSA");
-        }
-        if(event.target.innerText === "RSA-DEC"){
-            props.setItemType("RSA-DEC");
-        }
+        // if(event.target.innerText === "RSA"){
+        //     props.setItemType("RSA");
+        // }
+        // if(event.target.innerText === "RSA-DEC"){
+        //     props.setItemType("RSA-DEC");
+        // }
         // console.log(event);
         document.getElementById("userInput").value="";
     }
