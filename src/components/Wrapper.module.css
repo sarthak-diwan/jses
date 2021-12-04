@@ -5,3 +5,10 @@
     /* justify-content: space-between; */
     gap: 3%;
 }
+@media (max-width:800px) {
+    .wrapper{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    
+}
