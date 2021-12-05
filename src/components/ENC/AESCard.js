@@ -46,9 +46,9 @@ const AESCard = (props) => {
             </ParameterSelect>
             <ParameterSelect value="PADDING" values={["Pkcs7","Iso97971","AnsiX923","Iso10126","ZeroPadding","NoPadding"]}>
             </ParameterSelect>
-            <Button type="submit">
+            <Button type="submit" >
             SUBMIT
-            </Button>
+            </Button >
             <Output value={outputStr}>
             </Output>
         </form>

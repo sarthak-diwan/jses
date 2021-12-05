@@ -10,3 +10,15 @@
     resize: none;
     background-color: rgb(236, 236, 236);
 }
+.tb{
+    width: 80%;
+    height: 250px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    resize: none;
+    background-color: rgb(236, 236, 236);
+}

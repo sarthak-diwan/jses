@@ -8,7 +8,7 @@ const OutputChangeHandler = () =>{
 const Output = (props) => {
     return(
         <Fragment>
-            <textarea className={classes.ta} value={props.value} readOnly id="hashOutput" placeholder={props.placeholder}>
+            <textarea className={classes.tb} value={props.value} readOnly id="hashOutput" placeholder={props.placeholder}>
             </textarea>
         </Fragment>
     );
