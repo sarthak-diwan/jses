@@ -40,7 +40,7 @@ const MainCard = (props) => {
         <Card className={classes['main-card']}>
             <UserInput inputChangeHandler={inputChangeHandler}>
             </UserInput>
-            <Button>
+            <Button > 
                 SUBMIT
             </Button>
             <Output value={outputStr}>
