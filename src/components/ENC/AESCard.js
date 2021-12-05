@@ -36,7 +36,7 @@ const AESCard = (props) => {
     }
     return(
         <form onSubmit={encSubmitHandler} className={classes['main-card']}>
-            <UserInput>
+            <UserInput inputClass='aes'>
             </UserInput>
             <Parameter pName="KEY">
             </Parameter>
@@ -49,7 +49,7 @@ const AESCard = (props) => {
             <Button type="submit" >
             SUBMIT
             </Button >
-            <Output value={outputStr}>
+            <Output value={outputStr} outputClass='aes'>
             </Output>
         </form>
     );

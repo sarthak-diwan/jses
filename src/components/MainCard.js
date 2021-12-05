@@ -38,12 +38,12 @@ const MainCard = (props) => {
     {/* {props.itemType === "ENC" ? encHandler(props.currentHash) : ""} */}
     return(
         <Card className={classes['main-card']}>
-            <UserInput inputChangeHandler={inputChangeHandler}>
+            <UserInput inputChangeHandler={inputChangeHandler} inputClass='hash'>
             </UserInput>
             <Button > 
                 SUBMIT
             </Button>
-            <Output value={outputStr}>
+            <Output value={outputStr} outputClass='hash'>
             </Output>
         </Card>
     );

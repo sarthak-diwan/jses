@@ -6,7 +6,7 @@ const CryptoJS = require("crypto-js");
 const UserInput = (props) => {
     return (
         <Fragment>
-            <textarea className={classes.ta} autoFocus onChange={props.inputChangeHandler} id="userInput" placeholder={props.placeholder}>
+            <textarea className={classes.common + ' ' + classes[props.inputClass]} autoFocus onChange={props.inputChangeHandler} id="userInput" placeholder={props.placeholder}>
             </textarea>
         </Fragment>
     );

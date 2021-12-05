@@ -1,24 +1,22 @@
-.ta{
+.hash{
     width: 100%;
     height: 40%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 18px;
-    resize: none;
-    background-color: rgb(236, 236, 236);
 }
-.tb{
+.rsa{
     width: 80%;
     height: 250px;
+}
+.aes{
+    width: 100%;
+    height: 200px;
+}
+.common{
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
     font-size: 18px;
-    resize: none;
+    resize: both;
     background-color: rgb(236, 236, 236);
 }

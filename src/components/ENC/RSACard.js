@@ -44,11 +44,11 @@ const RSACard = (props) => {
                     <Button type="submit">
                     SUBMIT
                     </Button>
-                    <Output value={outputStr} placeholder="Encrypted Data">
+                    <Output value={outputStr} placeholder="Encrypted Data" outputClass='rsa'>
                     </Output>
-                    <Output value={publick} placeholder="Public Key">
+                    <Output value={publick} placeholder="Public Key" outputClass='rsa'>
                     </Output>
-                    <Output value={privatek} placeholder="Private Key">
+                    <Output value={privatek} placeholder="Private Key" outputClass='rsa'>
                     </Output>
                 </form>
             );
@@ -56,14 +56,14 @@ const RSACard = (props) => {
     }else if(props.mode === "DEC"){
         return(
             <form onSubmit={rsaSubmitHandler} className={classes['main-card']}>
-                <UserInput placeholder="Encrypted message">
+                <UserInput placeholder="Encrypted message" inputClass='rsa'>
                 </UserInput>
-                <UserInput placeholder="Private key">
+                <UserInput placeholder="Private key" inputClass='rsa'>
                 </UserInput>
                 <Button type="submit">
                 SUBMIT
                 </Button>
-                <Output value={outputStr} placeholder="Original Message">
+                <Output value={outputStr} placeholder="Original Message" outputClass='hash'>
                 </Output>
             </form>
         );
