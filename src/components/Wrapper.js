@@ -7,13 +7,16 @@ import Sidebar2 from './Sidebar2';
 const Wrapper = () => {
     const [currentHash,setCurrentHash] = useState("MD5");
     const [itemType, setItemType] = useState("HASH");
+    const [selectedValue, setSelectedValue] = useState('MD5');
+    const [note, setNote] = useState('');
+    const [chain, setChain] = useState([]);
     return(
         <div className={classes.wrapper}>
-            <MainCard currentHash={currentHash} setCurrentHash={setCurrentHash} itemType={itemType}>
+            <MainCard selectedValue={selectedValue} setSelectedValue={setSelectedValue} note={note} setNote={setNote} chain={chain} setChain={setChain} currentHash={currentHash} setCurrentHash={setCurrentHash} itemType={itemType}>
             </MainCard>
-            <Sidebar currentHash={currentHash} setCurrentHash={setCurrentHash} itemType={itemType} setItemType={setItemType}>
+            <Sidebar note={note} setNote={setNote} chain={chain} setChain={setChain} currentHash={currentHash} setCurrentHash={setCurrentHash} itemType={itemType} setItemType={setItemType}>
             </Sidebar >
-            <Sidebar2 currentHash={currentHash} setCurrentHash={setCurrentHash} itemType={itemType} setItemType={setItemType}>
+            <Sidebar2 note={note} setNote={setNote} chain={chain} setChain={setChain} currentHash={currentHash} setCurrentHash={setCurrentHash} itemType={itemType} setItemType={setItemType}>
             </Sidebar2>
         </div>
     );

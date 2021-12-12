@@ -5,6 +5,8 @@ const Sidebar = (props) => {
     const liClickHandler = (event) => {
         props.setCurrentHash(event.target.innerText);
         props.setItemType("HASH");
+        props.setNote('');
+        props.setChain([]);
         // console.log(event);
         document.getElementById("userInput").value="";
         

@@ -5,6 +5,8 @@ const Sidebar2 = (props) => {
     const liClickHandler = (event) => {
         props.setCurrentHash(event.target.innerText);
         props.setItemType("ENC");
+        props.setNote('');
+        props.setChain([]);
         // if(event.target.innerText === "RSA"){
         //     props.setItemType("RSA");
         // }
