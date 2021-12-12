@@ -3,7 +3,7 @@ import classes from './MainCard.module.css'
 import UserInput from './UserInput';
 import Output from './Output';
 import { useState } from 'react';
-import allHashes from './Hashes/Hashes';
+import {allHashes, allOriginalHashes} from './Hashes/Hashes';
 import Button from './UI/Button';
 import AESCard from './ENC/AESCard';
 import RSACard from './ENC/RSACard';
@@ -12,12 +12,12 @@ const MainCard = (props) => {
     const [outputStr, setOutputStr] = useState('');
     const inputChangeHandler = (event) => {
         // console.log(event);
-        let result = allHashes[props.currentHash](event.target.value);
+        let result = allOriginalHashes[props.currentHash](event.target.value);
         for (let i = 0; i < props.chain.length; i++) {
-            result = allHashes[props.chain[i]](result);
+            result = allOriginalHashes[props.chain[i]](result);
         }
         // console.log(result);
-        setOutputStr(result);
+        setOutputStr(result.toString());
     }
     const handleDropdownChange = (e) => {
         props.setSelectedValue(e.target.value);
@@ -48,7 +48,7 @@ const MainCard = (props) => {
     }
 
     let jsxCode = [];
-    for(let k in allHashes){
+    for(let k in allOriginalHashes){
         jsxCode.push(
             <option value={k}>{k}</option>
         );

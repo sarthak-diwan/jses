@@ -1,4 +1,4 @@
-import allHashes from './Hashes/Hashes';
+import {allHashes} from './Hashes/Hashes';
 import classes from './Sidebar.module.css';
 
 const Sidebar = (props) => {
