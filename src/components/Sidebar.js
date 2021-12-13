@@ -1,10 +1,13 @@
-import allHashes from './Hashes/Hashes';
+import {allHashes, allOriginalHashes} from './Hashes/Hashes';
 import classes from './Sidebar.module.css';
 
 const Sidebar = (props) => {
     const liClickHandler = (event) => {
         props.setCurrentHash(event.target.innerText);
         props.setItemType("HASH");
+        props.setNote('');
+        props.setChain([]);
+        props.setShowAdd(event.target.innerText in allOriginalHashes);
         // console.log(event);
         document.getElementById("userInput").value="";
         
