@@ -7,15 +7,6 @@ import {allHashes, allOriginalHashes} from './Hashes/Hashes';
 import Button from './UI/Button';
 import AESCard from './ENC/AESCard';
 import RSACard from './ENC/RSACard';
-import Base64 from 'crypto-js/enc-base64';
-
-function bin2String(array) {
-    var result = "";
-    for (var i = 0; i < array.length; i++) {
-      result += String.fromCharCode(parseInt(array[i], 2));
-    }
-    return result;
-}
 
 const MainCard = (props) => {
     const [outputStr, setOutputStr] = useState('');
