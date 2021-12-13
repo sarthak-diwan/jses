@@ -1,4 +1,4 @@
-import {allHashes} from './Hashes/Hashes';
+import {allHashes, allOriginalHashes} from './Hashes/Hashes';
 import classes from './Sidebar.module.css';
 
 const Sidebar = (props) => {
@@ -7,6 +7,7 @@ const Sidebar = (props) => {
         props.setItemType("HASH");
         props.setNote('');
         props.setChain([]);
+        props.setShowAdd(event.target.innerText in allOriginalHashes);
         // console.log(event);
         document.getElementById("userInput").value="";
         

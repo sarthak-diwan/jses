@@ -7,12 +7,26 @@ import {allHashes, allOriginalHashes} from './Hashes/Hashes';
 import Button from './UI/Button';
 import AESCard from './ENC/AESCard';
 import RSACard from './ENC/RSACard';
+import Base64 from 'crypto-js/enc-base64';
+
+function bin2String(array) {
+    var result = "";
+    for (var i = 0; i < array.length; i++) {
+      result += String.fromCharCode(parseInt(array[i], 2));
+    }
+    return result;
+}
 
 const MainCard = (props) => {
     const [outputStr, setOutputStr] = useState('');
     const inputChangeHandler = (event) => {
         // console.log(event);
-        let result = allOriginalHashes[props.currentHash](event.target.value);
+        let result;
+        if (props.chain.length == 0) {
+            result = allHashes[props.currentHash](event.target.value);
+        } else {
+            result = allOriginalHashes[props.currentHash](event.target.value);
+        }
         for (let i = 0; i < props.chain.length; i++) {
             result = allOriginalHashes[props.chain[i]](result);
         }
@@ -60,10 +74,7 @@ const MainCard = (props) => {
             <UserInput inputChangeHandler={inputChangeHandler} inputClass='hash'>
             </UserInput>
             <p style={{color: 'white'}}>{props.note}</p>
-            <select onChange={handleDropdownChange}>
-                {jsxCode}
-            </select>
-            <Button onClick={addChain}>ADD</Button>
+            {props.showAdd ? <div><select onChange={handleDropdownChange}> {jsxCode} </select> <Button onClick={addChain}>ADD</Button></div> : null}
             <Button > 
                 SUBMIT
             </Button>

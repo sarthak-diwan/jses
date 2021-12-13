@@ -18,10 +18,10 @@ const allOriginalHashes = {
         return CryptoJS.SHA512(input);
     },
     "BASE64":(input)=>{
-        return Base64.stringify(Utf8.parse(input));
+        return Base64.stringify(input);
     },
     "HEX":(input)=>{
-        return Hex.stringify(Utf8.parse(input));
+        return Hex.stringify(input);
     }
 }
 
