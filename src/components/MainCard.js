@@ -5,6 +5,7 @@ import Output from './Output';
 import { useState } from 'react';
 import {allHashes, allOriginalHashes} from './Hashes/Hashes';
 import Button from './UI/Button';
+import RoundButton from './UI/RoundButton';
 import AESCard from './ENC/AESCard';
 import RSACard from './ENC/RSACard';
 
@@ -32,7 +33,7 @@ const MainCard = (props) => {
         let _ = props.chain;
         _.push(props.selectedValue);
         props.setChain(_);
-        props.setNote("Current route: " + props.currentHash + ' --> ' + props.chain.join(' --> '));
+        props.setNote(props.currentHash + ' --> ' + props.chain.join(' --> '));
     }
 
     if(props.itemType === "ENC"){
@@ -64,8 +65,9 @@ const MainCard = (props) => {
         <Card className={classes['main-card']}>
             <UserInput inputChangeHandler={inputChangeHandler} inputClass='hash'>
             </UserInput>
-            <p style={{color: 'white'}}>{props.note}</p>
-            {props.showAdd ? <div><select onChange={handleDropdownChange}> {jsxCode} </select> <Button onClick={addChain}>ADD</Button></div> : null}
+            <p style={{color: 'white', margin: '0px'}}>Current route: {props.note}</p>
+            {props.showAdd ? <div><select onChange={handleDropdownChange}> {jsxCode} </select> <RoundButton onClick={addChain}><span>+</span>
+                </RoundButton></div> : null}
             <Button > 
                 SUBMIT
             </Button>
