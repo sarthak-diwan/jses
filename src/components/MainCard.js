@@ -45,6 +45,10 @@ const MainCard = (props) => {
         props.setChain(c);
         props.setNote(props.currentHash + " --> " + props.chain.join(" --> "));
     };
+    const HandleClear = () => {
+        props.setChain([]);
+        props.setNote("");
+    };
     if (props.itemType === "ENC") {
         let jsxTr;
         if (props.currentHash === "AES") {
@@ -107,6 +111,8 @@ const MainCard = (props) => {
                         onClick={delChain}
                         children={"-"}
                     ></RoundButton>
+                    {"  "}
+                    <Button onClick={HandleClear} children="Clear"></Button>
                 </div>
             ) : null}
             <Button>SUBMIT</Button>
