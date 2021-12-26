@@ -7,22 +7,22 @@
     cursor: pointer;
     border-radius: 5px;
     align-self: flex-start;
-    width: 25%;
-  }
-  
-  .button:hover,
-  .button:active {
+    width: 100px;
+}
+
+.button:hover,
+.button:active {
     background: #383838;
     border-color: #bebebe;
-  }
-  
-  .button:focus {
-    outline: none;
-  }
+}
 
-  @media screen and (max-width:768px) {
-  .button{
-    width: 30%;
-    padding: 0.5rem 1rem;
-  }
+.button:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 768px) {
+    .button {
+        width: 30%;
+        padding: 0.5rem 1rem;
+    }
 }
